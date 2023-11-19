@@ -1,0 +1,27 @@
+
+`
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿHû"RMINORZ
+CODE_SMELL
+•
+java:S1488/"bImmediately return this expression instead of assigning it to the temporary variable "institute1".(Õ»Çï8™—óŽ©0Hý"RMINORZ
+CODE_SMELL
+š
+java:S1488I"bImmediately return this expression instead of assigning it to the temporary variable "institute3".(¡‹Öïýÿÿÿÿ8ž•ìŽ©0H€#RMINORZ
+CODE_SMELL
+w
+java:S4684 "@Replace this persistent entity with a simple POJO or DTO object.(ØÐÍ©ûÿÿÿÿHƒ#RCRITICALZVULNERABILITY
+š
+java:S1488C"bImmediately return this expression instead of assigning it to the temporary variable "institute2".(°ü»ˆúÿÿÿÿ8™—óŽ©0H„#RMINORZ
+CODE_SMELL
+|
+java:S1128
+"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8¢—ôŽ©0H‡#RMINORZ
+CODE_SMELL
+x
+java:S1128	"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8¢—ôŽ©0H‰#RMINORZ
+CODE_SMELL
+r
+java:S46845"@Replace this persistent entity with a simple POJO or DTO object.(±Ò¦§H‹#RCRITICALZVULNERABILITY
+š
+java:S1488("bImmediately return this expression instead of assigning it to the temporary variable "institutes".(Þ½ƒ½üÿÿÿÿ8¢—ôŽ©0HŒ#RMINORZ
+CODE_SMELL

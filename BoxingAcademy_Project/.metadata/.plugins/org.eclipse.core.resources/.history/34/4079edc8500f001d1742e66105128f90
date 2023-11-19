@@ -1,0 +1,15 @@
+package org.virtusa.spring.service;
+
+import java.util.List;
+import java.util.Set;
+
+import org.virtusa.spring.entity.Institute;
+
+public interface InstituteService {
+	public Institute addInstitute(Institute institute);
+	public Institute updateInstitute(Long id,Institute institute);
+	public List<Institute> getInstitutes();
+	public Institute getInstitute(Long instituteId);
+	public void deleteInstitute(Long instituteId);
+
+}

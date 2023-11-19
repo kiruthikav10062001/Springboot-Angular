@@ -1,0 +1,5 @@
+package org.virtusa.spring.repository;
+
+public class StudentRepository {
+
+}

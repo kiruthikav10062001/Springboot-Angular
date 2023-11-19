@@ -1,0 +1,9 @@
+package org.virtusa.spring.entity.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.virtusa.spring.entity.Institute;
+
+public interface InstitueRespository extends JpaRepository<Institute,Long>{
+	
+
+}

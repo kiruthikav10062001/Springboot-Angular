@@ -1,0 +1,9 @@
+
+`
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿHÞ#RMINORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(ÉñÝúÿÿÿÿ8ÅïÔ¥«0Hà#RMAJORZ
+CODE_SMELL
+}	java:S112
+"FDefine and throw a dedicated exception instead of using a generic one.(øáöûÿÿÿÿ8ÅïÔ¥«0Há#RMAJORZ
+CODE_SMELL

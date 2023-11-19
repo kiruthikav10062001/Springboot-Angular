@@ -1,0 +1,92 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.virtusa.spring.entity.Institute;
+import org.virtusa.spring.repository.InstituteRespository;
+import org.virtusa.spring.exception.InstituteNameNotFoundException;
+import org.virtusa.spring.exception.InstituteNotFoundException;
+import org.virtusa.spring.service.InstituteService;
+
+@Service
+public class InstitueServiceImpl implements InstituteService{
+	@Autowired
+	private InstituteRespository instituteRepository;
+
+	@Override
+	public void addInstitute(Institute institute) {
+		instituteRepository.save(institute);
+		
+	}
+
+	@Override
+	public void updateInstitute(Long instituteId, Institute institute) {
+		Institute institute1=instituteRepository.findById(instituteId).orElseThrow(()->new InstituteNotFoundException("Institute with given Id not Found!!"));
+		institute1.setInstituteName(institute.getInstituteName());
+		institute1.setInstituteDescription(institute.getInstituteDescription());
+		institute1.setInstituteEmail(institute.getInstituteEmail());
+		institute1.setState(institute.getState());
+		institute1.setCity(institute.getCity());
+		institute1.setAddress(institute.getAddress());
+		institute1.setContact(institute.getContact());
+		institute1.setImageUrl(institute.getImageUrl());
+		
+		instituteRepository.save(institute1);
+	}
+
+	@Override
+	public List<Institute> getInstitutes() {
+		return instituteRepository.findAll();
+	}
+
+	@Override
+	public Institute getInstitute(Long instituteId) {
+		return instituteRepository.findById(instituteId).orElseThrow(()->new InstituteNotFoundException("Institute not found"));
+	}
+
+	@Override
+	public void deleteInstitute(Long instituteId) {
+		instituteRepository.deleteById(instituteId);
+		
+	}
+
+	@Override
+	public Optional<Institute> findByinstituteName(String instituteName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Institute> findByStateOrCity(String state, String city) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Institute> findByStateAndCity(String state, String city) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/*public Optional<Institute> getInstituteByInstituteName(String instituteName) {
+		return instituteRepository.findByinstituteName(instituteName).orElseThrow(()->new InstituteNameNotFoundException("Institute with given name not found"));
+	}
+	
+	public List<Institute> getInstituteByStateOrCity(String state,String city) {
+		return instituteRepository.findByStateOrCity(state, city);
+	}
+	
+	
+	public List<Institute> getInstituteByStateAndCity(String state,String city) {
+		return instituteRepository.findByStateAndCity(state, city);
+	}*/
+
+	
+	
+	
+}

@@ -1,0 +1,70 @@
+package org.virtusa.spring.controller;
+
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.virtusa.spring.entity.Institute;
+import org.virtusa.spring.service.InstituteService;
+
+@RestController
+@RequestMapping("/institute")
+public class InstituteController {
+	
+	@Autowired
+	private InstituteService instituteService;
+	
+	@PostMapping
+	public ResponseEntity<?> addInstitute(@RequestBody Institute institute){
+		instituteService.addInstitute(institute);
+		return new ResponseEntity<String>("Institute Added Succesfully",HttpStatus.CREATED);
+	}
+	@GetMapping
+	public ResponseEntity<List<Institute>> getInstitute(){
+		List<Institute> institutes=instituteService.getInstitutes();
+		return new ResponseEntity<List<Institute>>(institutes,HttpStatus.OK);
+	}
+	
+	@GetMapping("/{instituteId}")
+	public ResponseEntity<?> getInstitute(Long instituteId){
+		Institute institute1=instituteService.getInstitute(instituteId);
+		return new ResponseEntity<Institute>(institute1,HttpStatus.OK);
+	}
+	
+	@PostMapping("/update/{instituteId}")
+	public ResponseEntity<?> updateInstitute(@PathVariable("instituteId") Long instituteId,@RequestBody Institute institute){
+		instituteService.updateInstitute(instituteId, institute);
+		return new ResponseEntity<String>("Updated Succesfully",HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/delete/{instituteId}")
+	public ResponseEntity<?> deleteInstitute(@PathVariable("instituteId") Long instituteId){
+		instituteService.deleteInstitute(instituteId);
+		return new ResponseEntity<String>("Deleted succesfully",HttpStatus.OK);
+	}
+	
+	@GetMapping("/find/{instituteName}")
+	public ResponseEntity<Institute> findByInstituteName(@PathVariable("instituteName")String instituteName)
+	{
+		Institute institute2=instituteService.findByinstituteName(instituteName);
+		return new ResponseEntity<Institute>(institute2,HttpStatus.OK);
+	}
+	/*
+	@GetMapping("/find/{state}/{city}")
+	public ResponseEntity<List<Institute>> findByStateAndCity(@PathVariable("state")String state,@PathVariable("city")String city){
+		List<Institute> institute3=instituteService.findByStateAndCity(state, city);
+		return new ResponseEntity<List<Institute>>(institute3,HttpStatus.OK);
+	}*/
+	
+}

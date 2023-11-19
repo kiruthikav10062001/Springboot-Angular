@@ -1,0 +1,5 @@
+package org.virtusa.spring.exception;
+
+public class CourseFoundException extends Exception {
+
+}

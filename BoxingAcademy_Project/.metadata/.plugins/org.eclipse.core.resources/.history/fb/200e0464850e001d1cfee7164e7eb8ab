@@ -1,0 +1,5 @@
+package org.virtusa.spring.service;
+
+public class InstituteService {
+
+}

@@ -1,0 +1,16 @@
+
+b
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ8¥½ñ¼±0HÁ
+RMINORZ
+CODE_SMELL
+m
+java:S1128	";Remove this unused import 'org.virtusa.spring.entity.Role'.(®ÂÈ=8¥½ñ¼±0HÃ
+RMINORZ
+CODE_SMELL
+n	java:S125"<This block of commented-out lines of code should be removed.(éöëÒ8¥½ñ¼±0H¾
+RMAJORZ
+CODE_SMELL
+c
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¥½ñ¼±0H¿
+RMINORZ
+CODE_SMELL

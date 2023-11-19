@@ -1,0 +1,59 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.virtusa.spring.entity.Course;
+import org.virtusa.spring.entity.Student;
+import org.virtusa.spring.exception.CourseNotFoundException;
+import org.virtusa.spring.repository.StudentRepository;
+import org.virtusa.spring.service.StudentService;
+
+public class StudentServiceImpl implements StudentService{
+
+	@Autowired
+	private StudentRepository studentRepository;
+	@Override
+	public Student addStudent(Student student) {
+		Student member=this.studentRepository.findByStudentEmail(student.getStudentEmail());
+		if(member!=null)
+		{
+			throw new EntityFoundException("Student Already Present");
+		}
+		return this.studentRepository.save(student);
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		Student s=studentRepository.findById(student.getStudentId()).orElseThrow(()->new EntityNotFoundException("Student Not found!!"));
+		s.setFirstName(student.getFirstName());
+		s.setLastName(student.getLastName());
+		s.setMobileNumber(student.getMobileNumber());
+		s.setGender(student.getGender());
+		s.setAge(student.getAge());
+		s.setState(student.getState());
+		s.setCity(student.getCity());
+		s.setAddress(student.getAddress());
+		
+	}
+
+	@Override
+	public Set<Student> getStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student getStudent(long studentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteStudent(Long studentId) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

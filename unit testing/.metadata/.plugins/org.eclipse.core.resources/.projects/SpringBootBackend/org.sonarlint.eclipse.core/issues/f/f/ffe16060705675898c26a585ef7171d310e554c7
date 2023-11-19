@@ -1,0 +1,7 @@
+
+
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "docket".(Î”ºÄúÿÿÿÿH³RMINORZ
+CODE_SMELL
+‹
+java:S1488"_Immediately return this expression instead of assigning it to the temporary variable "apiInfo".(¼ñéH¶RMINORZ
+CODE_SMELL

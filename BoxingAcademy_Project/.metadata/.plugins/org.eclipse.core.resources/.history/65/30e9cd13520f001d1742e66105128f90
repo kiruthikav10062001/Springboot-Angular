@@ -1,0 +1,54 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.virtusa.spring.entity.Institute;
+import org.virtusa.spring.entity.repository.InstituteRespository;
+import org.virtusa.spring.exception.InstituteNotFoundException;
+import org.virtusa.spring.service.InstituteService;
+
+@Service
+public class InstitueServiceImpl implements InstituteService{
+	@Autowired
+	private InstituteRespository instituteRepository;
+
+	@Override
+	public void addInstitute(Institute institute) {
+		instituteRepository.save(institute);
+		
+	}
+
+	@Override
+	public void updateInstitute(Long instituteId, Institute institute) {
+		Institute institute1=instituteRepository.findById(instituteId).orElseThrow(()->new InstituteNotFoundException("Institute with given Id not Found!!"));
+		institute1.setInstituteName(institute.getInstituteName());
+		institute1.setInstituteDescription(institute.getInstituteDescription());
+		instituteRepository.save(institute1);
+	}
+
+	@Override
+	public List<Institute> getInstitutes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Institute getInstitute(Long instituteId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteInstitute(Long instituteId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+}

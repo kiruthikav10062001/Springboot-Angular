@@ -1,0 +1,15 @@
+package org.virtusa.spring.entity.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.virtusa.spring.entity.Institute;
+
+public interface InstituteRespository extends JpaRepository<Institute,Long>{
+	
+	Optional<Institute> findByinstituteName(String instituteName);
+	List<Institute> findByStateOrCity(String state,String city);
+	List<Institute> findByStateAndCity(String state,String city);
+	//Optional<Institute> findByinstituteId(Long instituteId);
+}

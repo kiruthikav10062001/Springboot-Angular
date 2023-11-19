@@ -1,0 +1,17 @@
+package org.virtusa.spring.repository;
+
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.virtusa.spring.entity.Course;
+import org.virtusa.spring.entity.Institute;
+
+public interface CourseRepository extends JpaRepository<Course,Long>{
+	Set<Course> findByInstitute(Institute institute);
+
+	Course findByCourseName(String courseName);
+	
+	
+
+}

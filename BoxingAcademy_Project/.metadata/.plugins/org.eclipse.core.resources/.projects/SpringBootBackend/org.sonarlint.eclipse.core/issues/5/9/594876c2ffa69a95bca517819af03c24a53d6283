@@ -1,0 +1,12 @@
+
+p
+java:S1128"=Remove this unused import 'javax.persistence.GenerationType'.(ı÷õ¡8Âİœ½§0HÄ!RMINORZ
+CODE_SMELL
+g
+java:S1128"5Remove this unused import 'javax.persistence.Column'.(ìûæH8¨®®½§0H¿!RMINORZ
+CODE_SMELL
+	java:S1166"QRename this field "Course" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şïõÒüÿÿÿÿHÃ!RMINORZ
+CODE_SMELL
+p
+java:S1128"=Remove this unused import 'javax.persistence.GeneratedValue'.(¤®À‚8Âİœ½§0HÁ!RMINORZ
+CODE_SMELL

@@ -1,0 +1,15 @@
+
+€
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(¶þ´ÒHì!RMINORZ
+CODE_SMELL
+g	java:S125}"<This block of commented-out lines of code should be removed.(Ë‹›£Hî!RMAJORZ
+CODE_SMELL
+g	java:S1257"<This block of commented-out lines of code should be removed.(Ã©öÎHþ!RMAJORZ
+CODE_SMELL
+l	java:S125."<This block of commented-out lines of code should be removed.(ÚùÇ‡ûÿÿÿÿHü!RMAJORZ
+CODE_SMELL
+g	java:S125S"<This block of commented-out lines of code should be removed.(ù×ÃêHÙ!RMAJORZ
+CODE_SMELL
+a
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿHú!RMINORZ
+CODE_SMELL

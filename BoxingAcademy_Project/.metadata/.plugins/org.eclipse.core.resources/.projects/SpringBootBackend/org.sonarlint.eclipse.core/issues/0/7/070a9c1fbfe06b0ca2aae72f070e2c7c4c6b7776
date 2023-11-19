@@ -1,0 +1,20 @@
+
+^
+java:S1602A",Remove useless curly braces around statement(À´¸d8×Š¹·§0H‚RMINORZ
+CODE_SMELL
+}	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ëµ¯ışÿÿÿÿ8•¥Ô¶§0HƒRMAJORZ
+CODE_SMELL
+x	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Âìİ·8•¥Ô¶§0H„RMAJORZ
+CODE_SMELL
+g
+java:S3740?"/Provide the parametrized type for this generic.(²–±àÿÿÿÿÿ8×Š¹·§0H…RMAJORZ
+CODE_SMELL
+i
+java:S11352"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ì¿´§0H†RINFOZ
+CODE_SMELL
+x	java:S112G"FDefine and throw a dedicated exception instead of using a generic one.(¦›²8•¥Ô¶§0H‡RMAJORZ
+CODE_SMELL
+
+java:S3655,"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¨“øçşÿÿÿÿ8›øå·§0HˆRMAJORZBUG
+|
+java:S36553"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(…³Å8Ÿãƒ·§0H‰RMAJORZBUG

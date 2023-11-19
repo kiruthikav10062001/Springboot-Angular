@@ -1,0 +1,65 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.virtusa.spring.entity.Course;
+import org.virtusa.spring.entity.Student;
+import org.virtusa.spring.exception.CourseNotFoundException;
+import org.virtusa.spring.exception.DomainFoundException;
+import org.virtusa.spring.exception.DomainNotFoundException;
+
+import org.virtusa.spring.repository.StudentRepository;
+import org.virtusa.spring.service.StudentService;
+
+@Service
+public class StudentServiceImpl implements StudentService{
+
+	@Autowired
+	private StudentRepository studentRepository;
+	@Override
+	public Student addStudent(Student student) {
+		Student member=this.studentRepository.findByStudentEmail(student.getStudentEmail());
+		if(member!=null)
+		{
+			throw new DomainFoundException("Student Already Present");
+		}
+		return this.studentRepository.save(student);
+	}
+
+	@Override
+	public Student updateStudent(Long studentId,Student student) {
+		Student s=studentRepository.findById(studentId).orElseThrow(()->new DomainNotFoundException("Student Not found!!"));
+		s.setFirstName(student.getFirstName());
+		s.setLastName(student.getLastName());
+		s.setMobileNumber(student.getMobileNumber());
+		s.setGender(student.getGender());
+		s.setAge(student.getAge());
+		s.setState(student.getState());
+		s.setCity(student.getCity());
+		s.setAddress(student.getAddress());
+		return studentRepository.save(s);
+		
+	}
+
+	@Override
+	public Set<Student> getStudents() {
+		return new LinkedHashSet<>(this.studentRepository.findAll());
+	}
+
+	@Override
+	public Student getStudent(long studentId) {
+		this.studentRepository.findById(studentId).orElseThrow(()->new DomainNotFoundException("Student not found here"));
+		return this.studentRepository.findById(studentId).get();
+	}
+
+	@Override
+	public void deleteStudent(Long studentId) {
+		Student st=this.studentRepository.findById(studentId).orElseThrow(()->new DomainNotFoundException("Student Not Found"));
+		this.studentRepository.delete(st);
+	}
+	
+
+}

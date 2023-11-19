@@ -1,0 +1,14 @@
+
+u
+java:S36558"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ø‹×èHª	RMAJORZBUG
+l	java:S125+"<This block of commented-out lines of code should be removed.(²à™˜ÿÿÿÿÿH«	RMAJORZ
+CODE_SMELL
+T
+java:S22017"/The return value of "orElseThrow" must be used.(Ã®ÍÌH­	RMAJORZBUG
+l	java:S125C"<This block of commented-out lines of code should be removed.(ªÝñÿÿÿÿÿH®	RMAJORZ
+CODE_SMELL
+l	java:S125H"<This block of commented-out lines of code should be removed.(ÞìòÏùÿÿÿÿH±	RMAJORZ
+CODE_SMELL
+`
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿH´	RMINORZ
+CODE_SMELL

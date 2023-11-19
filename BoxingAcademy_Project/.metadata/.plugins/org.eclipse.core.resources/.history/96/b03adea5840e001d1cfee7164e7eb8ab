@@ -1,0 +1,5 @@
+package org.virtusa.spring.entity.repository;
+
+public class InstitueRespository {
+
+}

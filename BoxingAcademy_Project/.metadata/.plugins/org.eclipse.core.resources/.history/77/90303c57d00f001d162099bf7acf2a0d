@@ -1,0 +1,19 @@
+package org.virtusa.spring.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.virtusa.spring.entity.Institute;
+
+public interface InstituteRespository extends JpaRepository<Institute,Long>{
+	@Query(value="SELECT * from institute i where i.name=?")
+	Institute findByinstituteName(String instituteName);
+	
+	@Query(value="SELECT * from institute i where i.state=? or i.city=?",nativeQuery=true)
+	List<Institute> findByStateOrCity(String state,String city);
+	
+	@Query(value="SELECT * from institute i where i.state=? and i.city=?")
+	List<Institute> findByStateAndCity(String state,String city);
+	//Optional<Institute> findByinstituteId(Long instituteId);
+}

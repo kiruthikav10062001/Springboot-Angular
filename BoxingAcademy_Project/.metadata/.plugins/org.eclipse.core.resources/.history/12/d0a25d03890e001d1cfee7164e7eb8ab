@@ -1,0 +1,5 @@
+package org.virtusa.spring.controller;
+
+public class InstituteController {
+
+}

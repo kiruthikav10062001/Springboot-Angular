@@ -1,0 +1,9 @@
+
+…	java:S116"URename this field "EnrolledID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ò¢°üÿÿÿÿHåRMINORZ
+CODE_SMELL
+e
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿHæRMINORZ
+CODE_SMELL
+W
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼üHèRMINORZ
+CODE_SMELL

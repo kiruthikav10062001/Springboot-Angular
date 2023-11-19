@@ -1,0 +1,27 @@
+
+‘
+java:S1488-"YImmediately return this expression instead of assigning it to the temporary variable "c".(Š’¿·ÿÿÿÿÿ8Å´èŽ©0Hù#RMINORZ
+CODE_SMELL
+s	java:S125J"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8åíá©0Hü#RMAJORZ
+CODE_SMELL
+x
+java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8ŸŒ««0H€$RMINORZ
+CODE_SMELL
+n	java:S125"<This block of commented-out lines of code should be removed.(ÐäÇÈ8™òÑ¥«0H‚$RMAJORZ
+CODE_SMELL
+|
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8ŸŒ««0H…$RMINORZ
+CODE_SMELL
+w
+java:S4684:"@Replace this persistent entity with a simple POJO or DTO object.(êŸ‚³þÿÿÿÿH‡$RCRITICALZVULNERABILITY
+s	java:S1255"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8Î‹êô¦0Hˆ$RMAJORZ
+CODE_SMELL
+k	java:S106%"9Replace this use of System.out or System.err by a logger.(ëç¿ü8™òÑ¥«0HŒ$RMAJORZ
+CODE_SMELL
+n	java:S125'"<This block of commented-out lines of code should be removed.( ë·8ŸŒ««0H$RMAJORZ
+CODE_SMELL
+’
+java:S1488["_Immediately return this expression instead of assigning it to the temporary variable "courses".(Ñ‚Æ8äÑ¼å¦0HŽ$RMINORZ
+CODE_SMELL
+r
+java:S4684$"@Replace this persistent entity with a simple POJO or DTO object.(îößH‘$RCRITICALZVULNERABILITY

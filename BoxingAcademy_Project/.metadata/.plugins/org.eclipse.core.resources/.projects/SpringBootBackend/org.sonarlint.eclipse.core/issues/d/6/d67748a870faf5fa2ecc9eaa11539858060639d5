@@ -1,0 +1,8 @@
+
+Œ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ¸¢ã8ù—·Ÿ¨0HØRMINORZ
+CODE_SMELL
+s	java:S125="<This block of commented-out lines of code should be removed.(ÿƒý§üÿÿÿÿ8úºƒ¾§0HÚRMAJORZ
+CODE_SMELL
+
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(­³˜ÿþÿÿÿÿ8àˆ‚¾§0HãRMAJORZBUG

@@ -1,0 +1,63 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.virtusa.spring.entity.Course;
+import org.virtusa.spring.entity.Institute;
+import org.virtusa.spring.repository.CourseRepository;
+import org.virtusa.spring.service.CourseService;
+
+@Service
+public class CourseServiceImpl implements CourseService{
+	@Autowired 
+	private CourseRepository courseRepository;
+	
+	@Override
+	public Course addCourse(Course course) {
+		Course course=courseRepository.findByCourseName(course.getCourseName());
+		if(coure!=null)
+		{
+			throw new CourseFoundException("Course Already Present!!");
+		}
+		return courseRepository.save(course);
+	}
+
+	@Override
+	public Course updateCourse(Course course) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Course> getCourses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Course getCourse(Long courseId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCourse(Long courseId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Set<Course> getCoursesOfInstitute(Institute institute) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Course> findByInstitute(Institute institute) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

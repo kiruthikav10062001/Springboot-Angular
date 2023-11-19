@@ -1,0 +1,182 @@
+package org.virtusa.spring.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name="institute")
+public class Institute {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long instituteId;
+	private String instituteName;
+	private String instituteDescription;
+	private String state;
+	private String city;
+	private String address;
+	private String contact;
+	@Column(nullable=false)
+	private String instituteEmail;
+	private String imageUrl;
+	@CreationTimestamp
+	private LocalDate createdAt;
+	@UpdateTimestamp
+	private LocalDate updatedAt;
+    public Institute() {
+    	
+    }
+
+	public Institute(Long instituteId, String instituteName, String instituteDescription, String state, String city,
+			String address, String contact, String instituteEmail, String imageUrl, LocalDate createdAt,
+			LocalDate updatedAt) {
+		super();
+		this.instituteId = instituteId;
+		this.instituteName = instituteName;
+		this.instituteDescription = instituteDescription;
+		this.state = state;
+		this.city = city;
+		this.address = address;
+		this.contact = contact;
+		this.instituteEmail = instituteEmail;
+		this.imageUrl = imageUrl;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
+	
+	
+
+
+
+
+
+
+
+
+	public Long getInstituteId() {
+		return instituteId;
+	}
+
+	public void setInstituteId(Long instituteId) {
+		this.instituteId = instituteId;
+	}
+
+	public String getInstituteName() {
+		return instituteName;
+	}
+
+	public void setInstituteName(String instituteName) {
+		this.instituteName = instituteName;
+	}
+
+	public String getInstituteDescription() {
+		return instituteDescription;
+	}
+
+	public void setInstituteDescription(String instituteDescription) {
+		this.instituteDescription = instituteDescription;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getInstituteEmail() {
+		return instituteEmail;
+	}
+
+	public void setInstituteEmail(String instituteEmail) {
+		this.instituteEmail = instituteEmail;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public LocalDate getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDate createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDate getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDate updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	@Override
+	public String toString() {
+	
+		return "AcademyInfo [instituteId= "+ instituteId+
+				", instituteName= " + instituteName+
+				", instituteDescription= "+instituteDescription+
+				", state= "+state+
+				", city= "+city+
+				", address= "+address+
+				", contact= "+contact+
+				", instituteEmail= "+instituteEmail+
+				", imageUrl= "+imageUrl+
+				", createdAt= "+createdAt+
+				", updatedAt= "+updatedAt+
+				"]";
+				
+	}
+	
+	
+	
+	
+}

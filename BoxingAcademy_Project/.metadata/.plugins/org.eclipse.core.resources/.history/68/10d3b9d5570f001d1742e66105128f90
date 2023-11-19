@@ -1,0 +1,5 @@
+package org.virtusa.spring.config;
+
+public class SwaggerConfig {
+
+}

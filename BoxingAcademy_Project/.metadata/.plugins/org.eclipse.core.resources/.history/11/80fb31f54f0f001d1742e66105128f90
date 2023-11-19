@@ -1,0 +1,56 @@
+package org.virtusa.spring.service.impl;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.virtusa.spring.entity.Institute;
+import org.virtusa.spring.entity.repository.InstituteRespository;
+import org.virtusa.spring.exception.InstituteNotFoundException;
+import org.virtusa.spring.service.InstituteService;
+
+@Service
+public class InstitueServiceImpl implements InstituteService{
+	@Autowired
+	private InstituteRespository instituteRepository;
+
+	@Override
+	public Institute addInstitute(Institute institute) {
+		return institueRepository.sa
+		
+	}
+
+	@Override
+	public Institute updateInstitute(Long id,Institute institute) {
+		instituteRepository.findById(institute.getInstitueId()).orElseThrow(()->new InstituteNotFoundException("Institute with given Id is not found"));
+		
+		Institute inst=instituteRepository.findById(institute.getInstitueId()).get();
+		institute.setCreatedAt(inst.getCreatedAt());
+		return this.instituteRepository.save(institute);
+	}
+
+	@Override
+	public Set<Institute> getInstitutes() {
+		return new LinkedHashSet<>(this.instituteRepository.findAll());
+	}
+
+	@Override
+	public Institute getInstitute(Long instituteId) {
+		this.instituteRepository.findById(instituteId).orElseThrow(()->new InstituteNotFoundException("Institue with given Id is not found"));
+		return this.instituteRepository.findById(instituteId).get();
+	}
+
+	@Override
+	public void deleteInstitute(Long instituteId) {
+		Institute deleteinstitute=this.instituteRepository.findById(instituteId).orElseThrow(()->new InstituteNotFoundException("Instute Not Found"));
+		this.instituteRepository.delete(deleteinstitute);
+	}
+
+	@Override
+	public Set<Institute> getByKeyword(String keyword) {
+		return instituteRepository.findByKeyword(keyword);
+	}
+	
+	
+}

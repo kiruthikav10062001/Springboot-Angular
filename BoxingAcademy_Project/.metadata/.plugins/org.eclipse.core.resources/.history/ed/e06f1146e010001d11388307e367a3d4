@@ -1,0 +1,9 @@
+package org.virtusa.spring.exception;
+
+public class CourseNotFoundEception extends RuntimeException{
+	public CourseNotFoundException(String desc)
+	{
+		Super(desc);
+	}
+
+}

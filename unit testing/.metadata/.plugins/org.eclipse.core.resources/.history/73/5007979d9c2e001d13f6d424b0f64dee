@@ -1,0 +1,87 @@
+package org.virtusa.spring;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.virtusa.spring.controller.RoleController;
+import org.virtusa.spring.entity.User;
+import org.virtusa.spring.repository.UserRepository;
+
+import static org.mockito.BDDMockito.given;
+
+
+import org.junit.Before;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@RunWith(MockitoJUnitRunner.class)
+public class RoleControllerTest {
+
+    private Optional<User> user;
+    @InjectMocks
+    private RoleController service;
+
+    @Mock
+    private UserRepository repository;
+    @Before
+    public void setUp() {
+        user = Optional.of(new User
+        (
+            "Hemanth",
+            "abc@gmail.com",
+            "passsword",
+            "7854684521", null, null, null, null
+            
+        ));
+        MockitoAnnotations.openMocks(this);
+    }
+    @Test
+    public void addUser() {
+        given(repository.save(user.get())).willReturn(user.get());
+        User user1= null;
+        try {
+            user1 = repository.save(user.get());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        assertNotNull(user1);
+    }
+
+    @Test
+    public void getAllUsers() {
+        given(repository.findAll()).willReturn(List.of(user.get()));
+        List<User> users=(List<User>) repository.findAll();
+        for(User user1:users) {
+            assertNotNull(user1);
+        }
+        assertEquals(1, users.size());
+    }
+
+    @Test
+    public void getUserByEmail() {
+        given(repository.findById(user.get().getEmail()));
+        Optional<User> user1 = repository.findById(user.get().getEmail());
+        assertNotNull(user1);
+        assertEquals(user.get(), user1);
+    }
+
+   
+
+    @Test
+    public void getUserByRole() {
+        given(repository.findByUserRole(user.get().getRoles())).willReturn(List.of(user.get()));
+        List<User> users=repository.findByUserRole(user.get().getRoles());
+        for(User user1:users) {
+            assertNotNull(user1);
+            assertEquals(user.get().getRoles(), user1.getRoles());
+        }
+        assertEquals(1, users.size());
+    }
+    
+}
